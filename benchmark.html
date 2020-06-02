@@ -97,12 +97,14 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     <h2>Benchmark Results</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <canvas id="linegraph" width="100%"></canvas>
+                    <canvas id="multilinegraph" width="100%"></canvas>
                     <table class="table table-bordered table-condensed table-striped">
                        <thead>
                           <tr>
                              <th title="Field #1">Name</th>
                              <th title="Field #2">Size at Oz (bytes)</th>
-                             <th title="Field #3">Size with bitsimplify (bytes)</th>
+                             <th title="Field #3">Size with bit simplify (bytes)</th>
                              <th title="Field #4">% reduction in code size</th>
                           </tr>
                        </thead>
@@ -111,115 +113,115 @@
                              <td>aha-mont64</td>
                              <td align="right">1808</td>
                              <td align="right">1066</td>
-                             <td align="right">41.03982301</td>
+                             <td align="right">41.03982</td>
                           </tr>
                           <tr>
                              <td>crc32</td>
                              <td align="right">222</td>
                              <td align="right">226</td>
-                             <td align="right">-1.801801802</td>
+                             <td align="right">-1.801801</td>
                           </tr>
                           <tr>
                              <td>cubic</td>
                              <td align="right">2958</td>
                              <td align="right">2998</td>
-                             <td align="right">-1.352265044</td>
+                             <td align="right">-1.352265</td>
                           </tr>
                           <tr>
                              <td>edn</td>
                              <td align="right">1408</td>
                              <td align="right">1480</td>
-                             <td align="right">-5.113636364</td>
+                             <td align="right">-5.113636</td>
                           </tr>
                           <tr>
                              <td>huffbench</td>
                              <td align="right">1398</td>
                              <td align="right">1378</td>
-                             <td align="right">1.430615165</td>
+                             <td align="right">1.430615</td>
                           </tr>
                           <tr>
                              <td>matmult-int</td>
                              <td align="right">450</td>
                              <td align="right">442</td>
-                             <td align="right">1.777777778</td>
+                             <td align="right">1.777777</td>
                           </tr>
                           <tr>
                              <td>minver</td>
                              <td align="right">1110</td>
                              <td align="right">1186</td>
-                             <td align="right">-6.846846847</td>
+                             <td align="right">-6.846846</td>
                           </tr>
                           <tr>
                              <td>nbody</td>
                              <td align="right">908</td>
                              <td align="right">918</td>
-                             <td align="right">-1.101321586</td>
+                             <td align="right">-1.101321</td>
                           </tr>
                           <tr>
                              <td>nettle-aes</td>
                              <td align="right">2828</td>
                              <td align="right">2900</td>
-                             <td align="right">-2.545968883</td>
+                             <td align="right">-2.545968</td>
                           </tr>
                           <tr>
                              <td>nettle-sha256</td>
                              <td align="right">4974</td>
                              <td align="right">4934</td>
-                             <td align="right">0.804181745</td>
+                             <td align="right">0.804181</td>
                           </tr>
                           <tr>
                              <td>nsichneu</td>
                              <td align="right">13330</td>
                              <td align="right">13392</td>
-                             <td align="right">-0.465116279</td>
+                             <td align="right">-0.465116</td>
                           </tr>
                           <tr>
                              <td>picojpeg</td>
                              <td align="right">9990</td>
                              <td align="right">8010</td>
-                             <td align="right">19.81981982</td>
+                             <td align="right">19.81981</td>
                           </tr>
                           <tr>
                              <td>qrduino</td>
                              <td align="right">8146</td>
                              <td align="right">6236</td>
-                             <td align="right">23.4470906</td>
+                             <td align="right">23.4470</td>
                           </tr>
                           <tr>
                              <td>sglib-combined</td>
                              <td align="right">2454</td>
                              <td align="right">2476</td>
-                             <td align="right">-0.896495518</td>
+                             <td align="right">-0.896495</td>
                           </tr>
                           <tr>
                              <td>slre</td>
                              <td align="right">2780</td>
                              <td align="right">2642</td>
-                             <td align="right">4.964028777</td>
+                             <td align="right">4.964028</td>
                           </tr>
                           <tr>
                              <td>st</td>
                              <td align="right">922</td>
                              <td align="right">914</td>
-                             <td align="right">0.867678959</td>
+                             <td align="right">0.867678</td>
                           </tr>
                           <tr>
                              <td>statemate</td>
                              <td align="right">3680</td>
                              <td align="right">3578</td>
-                             <td align="right">2.77173913</td>
+                             <td align="right">2.77173</td>
                           </tr>
                           <tr>
                              <td>ud</td>
                              <td align="right">890</td>
                              <td align="right">680</td>
-                             <td align="right">23.59550562</td>
+                             <td align="right">23.59550</td>
                           </tr>
                           <tr>
                              <td>wikisort</td>
                              <td align="right">5156</td>
                              <td align="right">4232</td>
-                             <td align="right">17.92086889</td>
+                             <td align="right">17.92086</td>
                           </tr>
                           <tr>
                              <td> </td>
@@ -231,7 +233,7 @@
                              <td>GM</td>
                              <td align="right"></td>
                              <td align="right"></td>
-                             <td align="right">7.172497752</td>
+                             <td align="right">7.172497</td>
                           </tr>
                        </tbody>
                     </table>
@@ -321,8 +323,47 @@
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="vendors/dist/Chart.js"></script>
   <script src="js/jquery.ajaxchimp.min.js"></script>
   <script src="js/mail-script.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    var linegraph = new Chart(document.getElementById('linegraph'), {
+        type: 'line',
+        data: {
+            labels: ['aha-mont64','crc32','cubic','edn','huffbench','matmult-int','minver','nbody','nettle-aes','nettle-sha256','nsichneu','picojpeg','qrduino','sglib-combined','slre','st','statemate','ud','wikisort'],
+            datasets: [{
+                label: '% reduction in code size',
+                data: [41.03982301,-1.801801802,-1.352265044,-5.113636364,1.430615165,1.777777778,-6.846846847,-1.101321586,-2.545968883,0.804181745,-0.465116279,19.81981982,23.4470906,-0.896495518,4.964028777,0.867678959,2.77173913,23.59550562,17.92086889,],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
 </body>
 </html>
