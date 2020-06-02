@@ -97,8 +97,8 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     <h2>Benchmark Results</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <canvas id="linegraph" width="100%"></canvas>
-                    <canvas id="multilinegraph" width="100%"></canvas>
+                    <p><canvas id="linegraph" width="100%"></canvas></p>
+                    <p><canvas id="multilinegraph" width="100%"></canvas></p>
                     <table class="table table-bordered table-condensed table-striped">
                        <thead>
                           <tr>
@@ -328,6 +328,55 @@
   <script src="js/mail-script.js"></script>
   <script src="js/main.js"></script>
   <script>
+    var multilinegraph = new Chart(document.getElementById('multilinegraph'), {
+        type: 'line',
+        data: {
+            labels: ['aha-mont64','crc32','cubic','edn','huffbench','matmult-int','minver','nbody','nettle-aes','nettle-sha256','nsichneu','picojpeg','qrduino','sglib-combined','slre','st','statemate','ud','wikisort'],
+            datasets: [{
+				label: 'Size at Oz (bytes)',
+                backgroundColor: 'rgba(0, 0, 255, 0.5)',
+                borderColor: 'rgba(0, 0, 255, 1)',
+                borderWidth: 1,
+				fill: false,
+				data: [1808,222,2958,1408,1398,450,1110,908,2828,4974,13330,9990,8146,2454,2780,922,3680,890,5156],
+				yAxisID: 'y-axis-1',
+			}, {
+				label: 'Size with bitsimplify (bytes)',
+                backgroundColor: 'rgba(255, 0, 0, 0.5)',
+                borderColor: 'rgba(255, 0, 0, 1)',
+                borderWidth: 1,
+				fill: false,
+				data: [1066,226,2998,1480,1378,442,1186,918,2900,4934,13392,8010,6236,2476,2642,914,3578,680,4232],
+				yAxisID: 'y-axis-2'
+			}]
+        },
+        options: {
+					responsive: true,
+					hoverMode: 'index',
+					stacked: false,
+					title: {
+						display: true,
+						text: 'Code Size Comparison (bytes) [logarithmic Scale]'
+					},
+					scales: {
+						yAxes: [{
+							type: 'logarithmic',
+							display: true,
+							position: 'left',
+							id: 'y-axis-1',
+						}, {
+							type: 'logarithmic',
+							display: true,
+							position: 'right',
+							id: 'y-axis-2',
+
+							gridLines: {
+								drawOnChartArea: true,
+							},
+						}],
+					}
+				}
+    });
     var linegraph = new Chart(document.getElementById('linegraph'), {
         type: 'line',
         data: {
@@ -335,22 +384,8 @@
             datasets: [{
                 label: '% reduction in code size',
                 data: [41.03982301,-1.801801802,-1.352265044,-5.113636364,1.430615165,1.777777778,-6.846846847,-1.101321586,-2.545968883,0.804181745,-0.465116279,19.81981982,23.4470906,-0.896495518,4.964028777,0.867678959,2.77173913,23.59550562,17.92086889,],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
+                backgroundColor: 'rgba(255, 0, 32, 0.2)',
+                borderColor: 'rgba(255, 0, 0, 1)',
                 borderWidth: 1
             }]
         },
