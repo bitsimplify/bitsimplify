@@ -15,61 +15,17 @@
   <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
   <!--================Header Menu Area =================-->
-  <header class="header_area">
-    <div class="main_menu">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container box_1620">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-            <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li class="nav-item active"><a class="nav-link" href="index.html#banner">Home</a></li>
-              <li class="nav-item submenu dropdown">
-                <a href="index.html#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Products <i class="ti-angle-down"></i></a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="download.html">Downloads</a></li>
-                  <li class="nav-item"><a class="nav-link" href="index.html#about">Lorem Ipsum</a></li>
-                </ul>
-			  </li>
-              <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
-              <li class="nav-item submenu dropdown">
-                <a href="index.html#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Pages <i class="ti-angle-down"></i></a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="docs.html">Docs</a></li>
-                  <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
-                  <li class="nav-item"><a class="nav-link" href="benchmark.html">Benchmark</a></li>
-                  <li class="nav-item"><a class="nav-link" href="privacy.html">Privacy Policy</a></li>
-                </ul>
-			 </li>
-              <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-              <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-            </ul>
-
-            <ul class="navbar-right">
-              <li class="nav-item">
-                  <a target="_blank" href="https://github.com/bitsimplify/bitsimplify">
-                      <button class="button button-header bg">GitHub</button>
-                  </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
+  <div id="nav-placeholder"></div>
+  <script>
+    $.get("./navbar/nav.html", function(data){
+        $("#nav-placeholder").replaceWith(data);
+    });
+  </script> 
   <!--================Header Menu Area =================-->
-
 
   <main class="side-main">
     <!--================  Banner start =================-->
@@ -119,7 +75,10 @@
                 </span>
                 <h3 class="card-feature__title">Compiler Toolchain</h3>
                 <p class="card-feature__subtitle">
-                    Take the lead with highly optimized compiler toolchains. Check the benchmark results here >>
+                    Take the lead with highly optimized compiler toolchains. <br/>
+                    <a href="benchmark.html" target="_blank">
+                      Check the benchmark results here >>
+                  </a>
                 </p><br>
                 <ul>
                     <li><i class="ti-check"></i> Reliable toolchains with full maintenance support.</li><br>
@@ -153,7 +112,7 @@
                 </span>
                 <h3 class="card-feature__title">Compiler as a Service</h3>
                 <p class="card-feature__subtitle">
-                    Don’t stop yourself from experimenting with our compiler in cloud.
+                  Don’t stop yourself from experimenting with our compiler toolchain and development solutions in the cloud.
                 </p><br>
                 <ul>
                     <li><i class="ti-check"></i> Reliable toolchains with full maintenance support.</li><br>
@@ -170,39 +129,14 @@
     </section>
     <!--================ Feature section end =================-->
 
-    <!--================ about section start =================-->
-    <section id="about" class="section-padding--small bg-magnolia">
-      <div class="container">
-        <div class="row no-gutters align-items-center">
-          <div class="col-md-5 mb-5 mb-md-0">
-            <div class="about__content">
-              <h2>About Us</h2>
-              <h3>At BitSimplify, we believe in providing best development environment for RISC-V</h3>
-              <p>Best hardware deserves best software.
-                  We thrive to support hardware vendors with reliable and optimized software toolchains.
-                  We specialize in compiler technologies which boost our partners with custom optimizations.
-                  With ever increasing competition among RISC-V providers, a highly optimized toolchain can help in getting ahead of competition with ease.
-                  We work for streamlining the software development on RISC-V through our modern and innovative solution.
-              </p>
-                <a class="button button-light" href="index.html#">Know More</a>
-            </div>
-          </div>
-          <div class="col-md-7">
-            <div class="about__img">
-              <img class="img-fluid" src="img/home/about.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================ about section end =================-->
+
 
     <!--================ Offer section start =================-->
     <section id="services" class="section-margin">
       <div class="container">
         <div class="section-intro pb-85px text-center">
           <h2 class="section-intro__title">Services We Offer</h2>
-          <h3 class="section-intro__title"><i class="ti-check"></i> Compiler Toolchain Maintenance.</h3>
+         <!--  <h3 class="section-intro__title"><i class="ti-check"></i> Compiler Toolchain Maintenance.</h3> -->
           <p class="section-intro__subtitle">We take care of your software so that you can focus on great hardware.</p>
         </div>
 
@@ -216,7 +150,7 @@
                     <i class="ti-pencil-alt"></i>
                   </span>
                   <h4>Custom Optimization Support.</h4>
-                  <p>Description text.</p>
+                  <p>Compiler optimizations are our strengths.</p>
                 </div>
               </div>
 
@@ -226,7 +160,7 @@
                     <i class="ti-ruler-pencil"></i>
                   </span>
                   <h4>Custom RISC-V Extensions.</h4>
-                  <p>Description text.</p>
+                  <p>We develop custom RISCV extensions as per your needs.</p>
                 </div>
               </div>
             </div>
@@ -237,12 +171,12 @@
                   <span class="offer-single__icon">
                     <i class="ti-cut"></i>
                   </span>
-                  <h4>Service 3</h4>
-                  <p>Description text.</p>
+                  <h4>Compiler toolchain maintenance</h4>
+                  <p>We maintain and support our reliable toolchains.</p>
                 </div>
               </div>
 
-              <div class="col-lg-6 offer-single">
+              <!-- <div class="col-lg-6 offer-single">
                 <div class="card offer-single__content text-center">
                   <span class="offer-single__icon">
                     <i class="ti-light-bulb"></i>
@@ -250,7 +184,7 @@
                   <h4>Service 4</h4>
                   <p>Description text.</p>
                 </div>
-              </div>
+              </div> -->
             </div>
 
           </div>
@@ -279,7 +213,7 @@
               <p>    An optimized toolchain can make a difference in the neck and neck competition amongst the hardware vendors. We are specialized in compiler optimizations. At the heart of everything we do, our compiler optimizations deliver the promise to be ahead of all the open source toolchains available.
                     At our benchmark section, you’ll find the code size results of our toolchain compared with the open source gnu and llvm toolchains.
             </p>
-              <a class="button button-light" href="index.html#">Know More</a>
+              <a class="button button-light" href="benchmark.html">Know More</a>
             </div>
           </div>
         </div>
@@ -293,15 +227,15 @@
       <div class="container">
         <div class="row align-items-center pt-xl-3 pb-xl-5">
           <div class="col-lg-6">
-            <div class="solution__img text-center text-lg-left mb-4 mb-lg-0">
-              <img class="img-fluid" src="img/home/solution.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-6">
             <div class="solution__content">
               <h2>We deliver the best Development Experience.</h2>
               <p>We are always innovating and developing modernized solutions for improving the development experience. We developed a docker based modular compiler environment for streamlining the development flow.</p>
               <a class="button button-light" href="index.html#">Know More</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="solution__img text-center text-lg-left mb-4 mb-lg-0">
+              <img class="img-fluid" src="img/home/solution.png" alt="">
             </div>
           </div>
         </div>
@@ -331,14 +265,38 @@
     <!--================ Solution section end =================-->
 
 
-
+    <!--================ about section start =================-->
+    <section id="about" class="section-padding--small bg-magnolia">
+      <div class="container">
+        <div class="row no-gutters align-items-center">
+          <div class="col-md-5 mb-5 mb-md-0">
+            <div class="about__content">
+              <h2>About Us</h2>
+              <h3>At BitSimplify, we believe in providing best development environment for RISC-V</h3>
+              <p>Best hardware deserves best software.
+                  We thrive to support hardware vendors with reliable and optimized software toolchains.
+                  We specialize in compiler technologies which boost our partners with custom optimizations.
+                  With ever increasing competition among RISC-V providers, a highly optimized toolchain can help in getting ahead of competition with ease.
+                  We work for streamlining the software development on RISC-V through our modern and innovative solution.
+              </p>
+                <a class="button button-light" href="index.html#contact">Know More</a>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="about__img">
+              <img class="img-fluid" src="img/home/about.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ about section end =================-->
 
   <!-- ================ contact section start ================= -->
   <section id="contact" class="section-margin">
     <div class="container">
         <div class="section-intro pb-85px text-center">
           <h2 class="section-intro__title">Contact Us</h2>
-          <h3 class="section-intro__title"><i class="ti-check"></i> We do not share your Personal Info.</h3>
         </div>
 
       <div class="row">
@@ -400,78 +358,12 @@
 
 
   <!-- ================ start footer Area ================= -->
-  <footer class="footer-area section-gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Top Products</h4>
-					<ul>
-						<li><a href="https://bitsimplify.com/">bitsimplify</a></li>
-						<li><a href="download.html#">Compiler Toolchain</a></li>
-						<li><a href="docs.html#">Development</a></li>
-						<li><a href="docs.html#">Compiler As a Service</a></li>
-					</ul>
-				</div>
-				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Quick Links</h4>
-					<ul>
-						<li><a href="blog.html#">Blog</a></li>
-						<li><a href="index.html#">About</a></li>
-						<li><a href="benchmark.html#">Benchmark</a></li>
-						<li><a href="privacy.html#">Privacy Policy</a></li>
-					</ul>
-				</div>
-				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Features</h4>
-					<ul>
-						<li><a href="blog.html#">Blog</a></li>
-						<li><a href="index.html#about">About</a></li>
-						<li><a href="index.html#services">Services</a></li>
-						<li><a href="privacy.html#">Terms of Service</a></li>
-					</ul>
-				</div>
-				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Resources</h4>
-					<ul>
-						<li><a href="https://github.com/bitsimplify/bitsimplify">GitHub</a></li>
-						<li><a href="https://bitsimplify.com/">bitsimplify</a></li>
-						<li><a href="career.html#">Team</a></li>
-						<li><a href="index.html#about">Company</a></li>
-					</ul>
-				</div>
-				<div class="col-xl-4 col-md-8 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Newsletter</h4>
-					<p>You can trust us.</p>
-					<div class="form-wrap" id="mc_embed_signup">
-						<form target="_blank" action=""
-						 method="get" class="form-inline">
-							<input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-							 required="" type="email">
-							<button class="btn btn-default btn-group-justified">subscribe</button>
-							<div style="position: absolute; left: -5000px;">
-								<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-							</div>
-
-							<div class="info"></div>
-						</form>
-					</div>
-				</div>
-			</div>
-			<div class="footer-bottom row align-items-center text-center text-lg-left">
-				<p class="footer-text m-0 col-lg-8 col-md-12">
-          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |
-          Made with <i class="fa fa-heart" aria-hidden="true"></i> by
-          <a href="https://bitsimplify.com" target="_blank">bitSimplify</a>
-        </p>
-				<div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-					<a href="index.html#"><i class="fab fa-facebook-f"></i></a>
-					<a href="index.html#"><i class="fab fa-twitter"></i></a>
-					<a href="https://www.linkedin.com/company/bitsimplify/"><i class="fab fa-linkedin"></i></a>
-					<a href="https://github.com/bitsimplify"><i class="fab fa-github"></i></a>
-				</div>
-			</div>
-		</div>
-	</footer>
+  <div id="footer-placeholder"></div>
+  <script>
+    $.get("./footer/footer.html", function(data){
+        $("#footer-placeholder").replaceWith(data);
+    });
+  </script>
   <!-- ================ End footer Area ================= -->
 
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>

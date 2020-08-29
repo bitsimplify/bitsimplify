@@ -15,59 +15,16 @@
   <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <!--================Header Menu Area =================-->
-    <header class="header_area">
-      <div class="main_menu">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container box_1620">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-              <ul class="nav navbar-nav menu_nav justify-content-end">
-                <li class="nav-item"><a class="nav-link" href="index.html#banner">Home</a></li>
-                <li class="nav-item submenu dropdown">
-                  <a href="index.html#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Products <i class="ti-angle-down"></i></a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="nav-link" href="download.html">Downloads</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#about">Lorem Ipsum</a></li>
-                  </ul>
-  			  </li>
-                <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
-                <li class="nav-item submenu dropdown  active">
-                  <a href="index.html#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">Pages <i class="ti-angle-down"></i></a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="nav-link" href="docs.html">Docs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
-                    <li class="nav-item  active"><a class="nav-link" href="benchmark.html">Benchmark</a></li>
-                    <li class="nav-item"><a class="nav-link" href="privacy.html">Privacy Policy</a></li>
-                  </ul>
-  			 </li>
-                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-              </ul>
-
-              <ul class="navbar-right">
-                <li class="nav-item">
-                    <a target="_blank" href="https://github.com/bitsimplify/bitsimplify">
-                        <button class="button button-header bg">GitHub</button>
-                    </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
+    <div id="nav-placeholder"></div>
+    <script>
+      $.get("./navbar/nav.html", function(data){
+          $("#nav-placeholder").replaceWith(data);
+      });
+    </script> 
     <!--================Header Menu Area =================-->
 
   <!--================ Hero sm Banner start =================-->
@@ -92,152 +49,12 @@
     <div class="container">
       <div class="row no-gutters align-items-center">
           <div class="about__content">
-              <h1 class=pagetitle>Benchmarks of our Product</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <h2 class=pagetitle>Highly optimized toolchains</h2>
+                    <p>Our state of the art code size optimizations reduces the code size by an average of 7% on Embench benchmarks.</p>
                     <h2>Benchmark Results</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <p><canvas id="linegraph" width="100%"></canvas></p>
                     <p><canvas id="multilinegraph" width="100%"></canvas></p>
-                    <table class="table table-bordered table-condensed table-striped">
-                       <thead>
-                          <tr>
-                             <th title="Field #1">Name</th>
-                             <th title="Field #2">Size at Oz (bytes)</th>
-                             <th title="Field #3">Size with bit simplify (bytes)</th>
-                             <th title="Field #4">% reduction in code size</th>
-                          </tr>
-                       </thead>
-                       <tbody>
-                          <tr>
-                             <td>aha-mont64</td>
-                             <td align="right">1808</td>
-                             <td align="right">1066</td>
-                             <td align="right">41.03982</td>
-                          </tr>
-                          <tr>
-                             <td>crc32</td>
-                             <td align="right">222</td>
-                             <td align="right">226</td>
-                             <td align="right">-1.801801</td>
-                          </tr>
-                          <tr>
-                             <td>cubic</td>
-                             <td align="right">2958</td>
-                             <td align="right">2998</td>
-                             <td align="right">-1.352265</td>
-                          </tr>
-                          <tr>
-                             <td>edn</td>
-                             <td align="right">1408</td>
-                             <td align="right">1480</td>
-                             <td align="right">-5.113636</td>
-                          </tr>
-                          <tr>
-                             <td>huffbench</td>
-                             <td align="right">1398</td>
-                             <td align="right">1378</td>
-                             <td align="right">1.430615</td>
-                          </tr>
-                          <tr>
-                             <td>matmult-int</td>
-                             <td align="right">450</td>
-                             <td align="right">442</td>
-                             <td align="right">1.777777</td>
-                          </tr>
-                          <tr>
-                             <td>minver</td>
-                             <td align="right">1110</td>
-                             <td align="right">1186</td>
-                             <td align="right">-6.846846</td>
-                          </tr>
-                          <tr>
-                             <td>nbody</td>
-                             <td align="right">908</td>
-                             <td align="right">918</td>
-                             <td align="right">-1.101321</td>
-                          </tr>
-                          <tr>
-                             <td>nettle-aes</td>
-                             <td align="right">2828</td>
-                             <td align="right">2900</td>
-                             <td align="right">-2.545968</td>
-                          </tr>
-                          <tr>
-                             <td>nettle-sha256</td>
-                             <td align="right">4974</td>
-                             <td align="right">4934</td>
-                             <td align="right">0.804181</td>
-                          </tr>
-                          <tr>
-                             <td>nsichneu</td>
-                             <td align="right">13330</td>
-                             <td align="right">13392</td>
-                             <td align="right">-0.465116</td>
-                          </tr>
-                          <tr>
-                             <td>picojpeg</td>
-                             <td align="right">9990</td>
-                             <td align="right">8010</td>
-                             <td align="right">19.81981</td>
-                          </tr>
-                          <tr>
-                             <td>qrduino</td>
-                             <td align="right">8146</td>
-                             <td align="right">6236</td>
-                             <td align="right">23.4470</td>
-                          </tr>
-                          <tr>
-                             <td>sglib-combined</td>
-                             <td align="right">2454</td>
-                             <td align="right">2476</td>
-                             <td align="right">-0.896495</td>
-                          </tr>
-                          <tr>
-                             <td>slre</td>
-                             <td align="right">2780</td>
-                             <td align="right">2642</td>
-                             <td align="right">4.964028</td>
-                          </tr>
-                          <tr>
-                             <td>st</td>
-                             <td align="right">922</td>
-                             <td align="right">914</td>
-                             <td align="right">0.867678</td>
-                          </tr>
-                          <tr>
-                             <td>statemate</td>
-                             <td align="right">3680</td>
-                             <td align="right">3578</td>
-                             <td align="right">2.77173</td>
-                          </tr>
-                          <tr>
-                             <td>ud</td>
-                             <td align="right">890</td>
-                             <td align="right">680</td>
-                             <td align="right">23.59550</td>
-                          </tr>
-                          <tr>
-                             <td>wikisort</td>
-                             <td align="right">5156</td>
-                             <td align="right">4232</td>
-                             <td align="right">17.92086</td>
-                          </tr>
-                          <tr>
-                             <td> </td>
-                             <td align="right"></td>
-                             <td align="right"></td>
-                             <td align="right"></td>
-                          </tr>
-                          <tr>
-                             <td>GM</td>
-                             <td align="right"></td>
-                             <td align="right"></td>
-                             <td align="right">7.172497</td>
-                          </tr>
-                       </tbody>
-                    </table>
              </div>
-
           </div>
       </div>
   </section>
@@ -245,78 +62,12 @@
 
 
   <!-- ================ start footer Area ================= -->
-  <footer class="footer-area section-gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Top Products</h4>
-                    <ul>
-                        <li><a href="https://bitsimplify.com/">bitsimplify</a></li>
-                        <li><a href="download.html#">Compiler Toolchain</a></li>
-                        <li><a href="docs.html#">Development</a></li>
-                        <li><a href="docs.html#">Compiler As a Service</a></li>
-                    </ul>
-                </div>
-                <div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="blog.html#">Blog</a></li>
-                        <li><a href="index.html#">About</a></li>
-                        <li><a href="benchmark.html#">Benchmark</a></li>
-                        <li><a href="privacy.html#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Features</h4>
-                    <ul>
-                        <li><a href="blog.html#">Blog</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="privacy.html#">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="https://github.com/bitsimplify/bitsimplify">GitHub</a></li>
-                        <li><a href="https://bitsimplify.com/">bitsimplify</a></li>
-                        <li><a href="career.html#">Team</a></li>
-                        <li><a href="index.html#about">Company</a></li>
-                    </ul>
-                </div>
-                <div class="col-xl-4 col-md-8 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Newsletter</h4>
-                    <p>You can trust us.</p>
-                    <div class="form-wrap" id="mc_embed_signup">
-                        <form target="_blank" action=""
-                         method="get" class="form-inline">
-                            <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                             required="" type="email">
-                            <button class="btn btn-default btn-group-justified">subscribe</button>
-                            <div style="position: absolute; left: -5000px;">
-                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                            </div>
-
-                            <div class="info"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom row align-items-center text-center text-lg-left">
-                <p class="footer-text m-0 col-lg-8 col-md-12">
-          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |
-          Made with <i class="fa fa-heart" aria-hidden="true"></i> by
-          <a href="https://bitsimplify.com" target="_blank">bitSimplify</a>
-        </p>
-                <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-                    <a href="index.html#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="index.html#"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/company/bitsimplify/"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/bitsimplify"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <div id="footer-placeholder"></div>
+  <script>
+    $.get("./footer/footer.html", function(data){
+        $("#footer-placeholder").replaceWith(data);
+    });
+  </script>
   <!-- ================ End footer Area ================= -->
 
 
