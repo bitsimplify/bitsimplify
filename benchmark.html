@@ -111,12 +111,10 @@
 					},
 					scales: {
 						yAxes: [{
-							type: 'logarithmic',
 							display: true,
 							position: 'left',
-							id: 'y-axis-1',
+							id: 'y-axis-1'
 						}, {
-							type: 'logarithmic',
 							display: true,
 							position: 'right',
 							id: 'y-axis-2',
@@ -144,7 +142,9 @@
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        stepSize: 5,
+                        max: 50 
                     }
                 }]
             }
